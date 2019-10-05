@@ -22,9 +22,12 @@ const Location = () => {
   //get location and fetch data from Yelp API
 
   return (
-    <div>
-      <button onClick={getData}>Find Me</button>
-      {isLoading ? <div>Loading..</div> : null}
+    <div className='locationFinder'>
+      {isLoading ? (
+        <button>Loading</button>
+      ) : (
+        <button onClick={getData}>find me</button>
+      )}
     </div>
   );
 };

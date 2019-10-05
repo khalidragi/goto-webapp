@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ReasturantsContext } from '../context/ReasturantsContext';
+import Reasturant from './Reasturant';
 
 const ReasturantList = () => {
   const { reasturants, setFindMe } = useContext(ReasturantsContext);
@@ -27,22 +28,17 @@ const ReasturantList = () => {
     setFindMe(true);
   };
 
-  const updateUI = () => {
-    const reasturantList = reasturants.map(result => {
-      return (
-        <div key={result.id}>
-          <img src={result.image_url} width='200px' alt='logo' />
-        </div>
-      );
-    });
-    return <div>{reasturantList}</div>;
-  };
-
   return (
     <>
       <button onClick={sortData}>Find The Worst</button>
       <button onClick={back}>Back</button>
-      <div>{reasturants.length ? updateUI() : null}</div>
+      <div>
+        {reasturants.length
+          ? reasturants.map(result => {
+              return <Reasturant key={result.id} data={result} />;
+            })
+          : null}
+      </div>
     </>
   );
 };
