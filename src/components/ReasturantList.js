@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ReasturantsContext } from '../context/ReasturantsContext';
 import Reasturant from './Reasturant';
+import { SortBtn, BackBtn } from '../utils/constants';
 
 const ReasturantList = () => {
   const { reasturants, setFindMe } = useContext(ReasturantsContext);
@@ -29,9 +30,12 @@ const ReasturantList = () => {
   };
 
   return (
-    <>
-      <button onClick={sortData}>Find The Worst</button>
-      <button onClick={back}>Back</button>
+    <div className='reasturantList'>
+      <div className='reasturantListBtns'>
+        <SortBtn onClick={sortData}></SortBtn>
+        <BackBtn onClick={back}></BackBtn>
+      </div>
+
       <div>
         {reasturants.length
           ? reasturants.map(result => {
@@ -39,7 +43,7 @@ const ReasturantList = () => {
             })
           : null}
       </div>
-    </>
+    </div>
   );
 };
 

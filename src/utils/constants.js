@@ -2,6 +2,8 @@ import React from 'react';
 import { SvgIcon, Fab } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import NavigationIcon from '@material-ui/icons/Navigation';
+import ImportExportIcon from '@material-ui/icons/ImportExport';
+import HomeIcon from '@material-ui/icons/Home';
 
 export function PhoneIcon(props) {
   return (
@@ -35,10 +37,43 @@ export function FindMeBtn(props) {
       {...props}
       variant='extended'
       style={{ background: '#f7cc00' }}
-      aria-label='add'
+      aria-label='find me'
       className={classes.margin}>
       <NavigationIcon className={classes.extendedIcon} />
       Find Me A Place..
+    </Fab>
+  );
+}
+
+export function SortBtn(props) {
+  const classes = useStyles();
+
+  return (
+    <Fab
+      {...props}
+      size='small'
+      variant='extended'
+      style={{ background: '#f7cc00' }}
+      aria-label='sort list'
+      className={classes.margin}>
+      <ImportExportIcon className={classes.extendedIcon} />
+      Best or Worst
+    </Fab>
+  );
+}
+export function BackBtn(props) {
+  const classes = useStyles();
+
+  return (
+    <Fab
+      {...props}
+      size='small'
+      variant='extended'
+      style={{ background: '#f7cc00' }}
+      aria-label='sort list'
+      className={classes.margin}>
+      <HomeIcon className={classes.extendedIcon} />
+      Back
     </Fab>
   );
 }
