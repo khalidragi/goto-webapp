@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { ReasturantsContext } from '../context/ReasturantsContext';
 import { getCurrentPosition, getReasts } from '../utils/utils';
+import { FindMeBtn } from '../utils/constants';
+import { Hero } from '../utils/partials';
 
 const Location = () => {
   const { setReasturants, setFindMe, setLoading, isLoading } = useContext(
@@ -23,11 +25,8 @@ const Location = () => {
 
   return (
     <div className='locationFinder'>
-      {isLoading ? (
-        <button>Loading</button>
-      ) : (
-        <button onClick={getData}>find me</button>
-      )}
+      <Hero />
+      {isLoading ? <button>Loading</button> : <FindMeBtn onClick={getData} />}
     </div>
   );
 };

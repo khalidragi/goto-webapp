@@ -2,45 +2,25 @@ $base-color: #262523;
 $primary-color: #f1eee8;
 $yellow-color: #f7cc00;
 
-body,
-html {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-  box-sizing: border-box;
-  background: #262523;
+.container {
+  background-color: $base-color;
 }
 
-.app {
-  width: 80vw;
-  height: 100%vh;
-  align-self: center;
-  display: flexbox;
-  flex-direction: column;
-  justify-content: center;
+.App {
+  height: 100vh;
+  display: flex;
   align-items: center;
-}
-
-header {
-  display: flex-1;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .locationFinder {
-  display: f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
-  button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 50%;
-    margin: auto 20px;
-    cursor: pointer;
-  }
+.locationFinder {
+  height: 100vh;
 }
