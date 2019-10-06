@@ -7,7 +7,6 @@ $yellow-color: #f7cc00;
 }
 
 .App {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,10 +16,7 @@ $yellow-color: #f7cc00;
 .locationFinder {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
-}
-
-.locationFinder {
   height: 100vh;
 }

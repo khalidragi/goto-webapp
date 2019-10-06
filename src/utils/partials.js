@@ -9,11 +9,15 @@ export function Hero() {
           component='h1'
           variant='h2'
           align='center'
-          color='textPrimary'
+          style={{ color: '#ccc' }}
           gutterBottom>
           Created for the Curious
         </Typography>
-        <Typography variant='h5' align='center' color='textSecondary' paragraph>
+        <Typography
+          variant='h5'
+          align='center'
+          style={{ color: '#9b9494' }}
+          paragraph>
           Do you ever wanted to find the best and worst reasturants around you?
           We will find you both and then you decide.
         </Typography>
