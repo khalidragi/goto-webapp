@@ -3,6 +3,7 @@ import { ReasturantsContext } from '../context/ReasturantsContext';
 import { getCurrentPosition, getReasts } from '../utils/utils';
 import { FindMeBtn } from '../utils/constants';
 import { Hero } from '../utils/partials';
+import { CircularProgress } from '@material-ui/core';
 
 const Location = () => {
   const { setReasturants, setFindMe, setLoading, isLoading } = useContext(
@@ -26,7 +27,11 @@ const Location = () => {
   return (
     <div className='locationFinder'>
       <Hero />
-      {isLoading ? <button>Loading</button> : <FindMeBtn onClick={getData} />}
+      {isLoading ? (
+        <CircularProgress style={{ color: '#f7cc00' }} />
+      ) : (
+        <FindMeBtn onClick={getData} />
+      )}
     </div>
   );
 };
