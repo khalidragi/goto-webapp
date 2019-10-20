@@ -6,6 +6,7 @@ const ReasturantsContextProvider = props => {
   const [reasturants, setReasturants] = useState([]);
   const [findMe, setFindMe] = useState(true);
   const [isLoading, setLoading] = useState(false);
+  const [isAsc, setAsc] = useState(true);
 
   return (
     <ReasturantsContext.Provider
@@ -15,7 +16,9 @@ const ReasturantsContextProvider = props => {
         findMe,
         isLoading,
         setLoading,
-        setFindMe
+        setFindMe,
+        isAsc,
+        setAsc
       }}>
       {props.children}
     </ReasturantsContext.Provider>

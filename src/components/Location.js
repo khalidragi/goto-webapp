@@ -15,9 +15,8 @@ const Location = () => {
     const { coords } = await getCurrentPosition();
     const { latitude, longitude } = coords;
     let res = await getReasts(latitude, longitude);
-    let list = await res.data.businesses;
+    let list = res.data.businesses.sort((a, b) => b.rating - a.rating);
     setReasturants(list);
-    console.log(list);
     setLoading(false);
     setFindMe(false);
   };

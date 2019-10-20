@@ -1,47 +1,36 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ReasturantsContext } from '../context/ReasturantsContext';
 import Reasturant from './Reasturant';
 import { SortBtn, BackBtn } from '../utils/constants';
 
 const ReasturantList = () => {
-  const { reasturants, setFindMe } = useContext(ReasturantsContext);
-
-  // const sortByRating = () => {
-  //   let sortedResults = reasturants;
-  //   if (isSorted) {
-  //     sortedResults = resList.sort((a, b) => {
-  //       return a.rating - b.rating;
-  //     });
-  //   } else {
-  //     sortedResults = resList.sort((a, b) => {
-  //       return b.rating - a.rating;
-  //     });
-  //   }
-  //   setResList(sortedResults);
-  //   setIsSorted(!isSorted);
-  // };
-
-  const sortData = () => {
-    console.log('sorted');
-  };
+  const { reasturants, setFindMe, setAsc, isAsc } = useContext(
+    ReasturantsContext
+  );
 
   const back = () => {
     setFindMe(true);
   };
 
+  const sortList = () => {
+    setAsc(!isAsc);
+  };
+
   return (
     <div className='reasturantList'>
       <div className='reasturantListBtns'>
-        <SortBtn onClick={sortData}></SortBtn>
+        <SortBtn onClick={sortList}></SortBtn>
         <BackBtn onClick={back}></BackBtn>
       </div>
 
       <div>
-        {reasturants.length
-          ? reasturants.map(result => {
-              return <Reasturant key={result.id} data={result} />;
+        {isAsc
+          ? [...reasturants].map(reasturant => {
+              return <Reasturant key={reasturant.id} data={reasturant} />;
             })
-          : null}
+          : [...reasturants].reverse().map(reasturant => {
+              return <Reasturant key={reasturant.id} data={reasturant} />;
+            })}
       </div>
     </div>
   );

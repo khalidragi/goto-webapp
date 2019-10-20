@@ -9,14 +9,14 @@ export function Hero() {
           component='h1'
           variant='h2'
           align='center'
-          style={{ color: '#ccc' }}
+          style={{ color: '#ccc', marginBottom: '40px' }}
           gutterBottom>
-          Created for the Curious
+          Created For The Curious
         </Typography>
         <Typography
-          variant='h5'
+          variant='h6'
           align='center'
-          style={{ color: '#9b9494' }}
+          style={{ color: '#667d85', textAlign: 'justify' }}
           paragraph>
           Do you ever wanted to find the best and worst reasturants around you?
           We will find you both and then you decide.
