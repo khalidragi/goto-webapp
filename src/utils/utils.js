@@ -17,7 +17,8 @@ export const getReasts = async (latitude, longitude) => {
       },
       //option params passed to API call to retrieve only breakfast and lunch spots
       params: {
-        categories: 'reasturant'
+        categories: 'reasturant',
+        limit: 50
       }
     }
   );

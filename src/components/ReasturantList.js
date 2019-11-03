@@ -17,13 +17,13 @@ const ReasturantList = () => {
   };
 
   return (
-    <div className='reasturantList'>
+    <div className='reasturantList' style={{ flexDirection: 'column' }}>
       <div className='reasturantListBtns'>
         <SortBtn onClick={sortList}></SortBtn>
         <BackBtn onClick={back}></BackBtn>
       </div>
 
-      <div>
+      <div className='reasturants'>
         {isAsc
           ? [...reasturants].map(reasturant => {
               return <Reasturant key={reasturant.id} data={reasturant} />;

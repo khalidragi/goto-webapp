@@ -7,7 +7,8 @@ import {
   CardContent,
   CardMedia,
   Button,
-  Typography
+  Typography,
+  Avatar
 } from '@material-ui/core';
 import Rating from '@material-ui/lab/Rating';
 import { PhoneIcon, LocationIcon } from '../utils/constants';
@@ -19,6 +20,11 @@ const useStyles = makeStyles({
   },
   media: {
     height: 140
+  },
+  bigAvatar: {
+    margin: 10,
+    width: 60,
+    height: 60
   }
 });
 
@@ -55,6 +61,11 @@ export default function MediaCard({ data }) {
         <Button size='small' color='primary' href={data.url}>
           More infomration on Yelp
         </Button>
+        <Avatar
+          alt='goto logo'
+          className={classes.bigAvatar}
+          src={require('../assets/YelpLogo.png')}
+        />
       </CardActions>
     </Card>
   );

@@ -17,14 +17,37 @@ $yellow-color: #f7cc00;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-direction: column;
   height: 100vh;
+  flex-direction: column;
 }
 
 .reasturantList {
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   .reasturantListBtns {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .reasturants {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    .MuiCard-root {
+      flex-basis: 284px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  .reasturantList {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
   }
 }

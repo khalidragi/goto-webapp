@@ -9,7 +9,7 @@ import NavBar from './components/NavBar';
 const App = () => {
   const { findMe } = useContext(ReasturantsContext);
   return (
-    <Container maxWidth='sm' className='container'>
+    <Container className='container'>
       <CssBaseline />
       <div className='App'>
         <NavBar className='navbar' />
